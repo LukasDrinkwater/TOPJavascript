@@ -1,0 +1,38 @@
+Play around with the idea. For now, try creating an array of arrays:
+
+const winningCombos = [
+  [0, 1, 2],
+];
+
+Because later on, you could even:
+
+winningCombos.forEach( (oneCombo, index)=>{
+  console.log( "winning Combo number "+index);
+  console.log( oneCombo[0], gameboard[ oneCombo[0] ] )
+  console.log( oneCombo[1], gameboard[ oneCombo[1] ] )
+  console.log( oneCombo[2], gameboard[ oneCombo[2] ] )
+})
+
+so oneCombo is the [0, 1, 2] thing - and each 
+of those values are an index in gameboard[].
+
+
+
+so forEach actually passes us a few values, and as you say 
+oneCombo is capturing the current value of this particular loop. 
+and index is capturing the index of that current value in the array as a whole.
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach#syntax
+
+
+
+if a value does match, go onto the checking the next value in the combo array
+
+if one a value doesnt match do something that makes it
+ skip over and go to the next combo array
+
+
+
+Welp, you've got a winningCombos array of arrays.
+ So it sounds like, within that, you want to find the
+one combo array where every value represents an index in gameboard where the current player's marker sits. Yes?

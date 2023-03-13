@@ -1,0 +1,17 @@
+.gridContainer {
+  display: grid;
+}
+
+.ticTacToeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 50px);
+  grid-gap: 10px;
+}
+
+.gridSquare {
+  display: grid;
+  height: 50px;
+  width: 50px;
+  background-color: blue;
+  font-size: 3rem;
+}

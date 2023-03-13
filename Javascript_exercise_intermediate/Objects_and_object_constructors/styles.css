@@ -1,0 +1,32 @@
+/* style sheet for the library project */
+
+/*  STYLE FOR MAIN CONTAINER */
+
+.mainContainer {
+  display: grid;
+  border: solid;
+  border-color: blue;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* STYLE FOR SUBMIT BOOK FORM CONTAINER */
+
+.submitBookFormContainer {
+  display: grid;
+  border: solid;
+  border-color: red;
+}
+
+/* STYLE FOR THE CARD CONTAINER */
+
+.cardContainer {
+  display: grid;
+  border: solid;
+  border-color: green;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  /* grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
+}
+
+.card {
+  display: grid;
+}
