@@ -13,6 +13,8 @@ function createHoursList(info, infoCards) {
     ul.appendChild(li);
   }
   hoursCard.appendChild(ul);
+  console.log(hoursCard);
+  console.log(infoCards);
   infoCards.append(hoursCard);
 
   return hoursCard;
