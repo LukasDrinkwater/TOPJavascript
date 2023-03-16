@@ -1,11 +1,12 @@
-function createHoursList(info, infoCards) {
+function createHoursList(infoCards, info) {
+  console.log(info);
   // make the div and ul
   let hoursCard = document.createElement("div");
 
   let ul = document.createElement("ul");
 
   // Loop through the `info` array and create a list item for each day
-  for (let i = 0; i < info.length; i++) {
+  for (let i = 0; i < 7; i++) {
     let li = document.createElement("li");
 
     li.innerText = info[i].day + ": " + info[i].open + " - " + info[i].close;
@@ -14,7 +15,6 @@ function createHoursList(info, infoCards) {
   }
   hoursCard.appendChild(ul);
   console.log(hoursCard);
-  console.log(infoCards);
   infoCards.append(hoursCard);
 
   return hoursCard;

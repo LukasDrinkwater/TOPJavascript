@@ -33,7 +33,7 @@ function createMainPage() {
   aboutCard.append(aboutCardP);
   infoCards.append(aboutCard);
 
-  createHoursList(infoCards);
+  createHoursList(infoCards, info);
 }
 
 // function createMenuPage() {}
