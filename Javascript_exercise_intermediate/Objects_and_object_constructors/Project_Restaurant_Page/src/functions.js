@@ -1,5 +1,4 @@
 function createHoursList(infoCards, info) {
-  console.log(info);
   // make the div and ul
   let hoursCard = document.createElement("div");
 
@@ -14,7 +13,7 @@ function createHoursList(infoCards, info) {
     ul.appendChild(li);
   }
   hoursCard.appendChild(ul);
-  console.log(hoursCard);
+  hoursCard.classList.add("card");
   infoCards.append(hoursCard);
 
   return hoursCard;

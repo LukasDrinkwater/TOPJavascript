@@ -1,7 +1,13 @@
 import { info } from "./info.js";
 import { createHoursList } from "./functions.js";
 
+const homeButton = document.getElementsByClassName("home");
+
 console.log("its workingegaeg");
+
+// add a event listener for the home button torun the createMainPage function.
+
+homeButton.addEventListener("click");
 
 function createMainPage() {
   let aboutText =
@@ -35,8 +41,6 @@ function createMainPage() {
 
   createHoursList(infoCards, info);
 }
-
-// function createMenuPage() {}
 
 function main() {
   createMainPage();
