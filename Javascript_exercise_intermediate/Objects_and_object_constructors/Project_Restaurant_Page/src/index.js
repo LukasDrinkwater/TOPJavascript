@@ -1,18 +1,46 @@
 import { info } from "./info.js";
 import { createHoursList } from "./functions.js";
 
-const homeButton = document.getElementsByClassName("home");
+let currentPage = "home";
+const homeButton = document.getElementById("home");
+const menuButton = document.getElementById("menu");
+const contactButton = document.getElementById("contact");
 
 console.log("its workingegaeg");
 
-// add a event listener for the home button torun the createMainPage function.
+// add a event listener for the 3 header buttons.
 
-homeButton.addEventListener("click");
+homeButton.addEventListener("click", function () {
+  createHomePage();
+});
 
-function createMainPage() {
+homeButton.addEventListener("click", function () {
+  createMenuPage();
+});
+
+function createMenuPage() {
+  console.log("menu button click");
+  currentPage = "menu";
+
+  if (currentPage != "menu") {
+    const mainContainer = document.getElementById("myDivContainer");
+
+    button.addEventListener("click", function () {
+      while (mainContainer.firstChild) {
+        mainContainer.removeChild(mainContainer.firstChild);
+      }
+    });
+  }
+}
+
+function createHomePage() {
+  console.log("home button click");
+  currentPage = "home";
+
   let aboutText =
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit atque neque nulla aut quisquam soluta. Odit sunt dolore non beatae accusantium aliquam eos repellat, asperiores, reiciendis, esse quos numquam enim?";
 
+  // if (currentPage != "home") {
   // create the main divs for the content.
   // create each elements
   const content = document.getElementById("content"),
@@ -41,9 +69,10 @@ function createMainPage() {
 
   createHoursList(infoCards, info);
 }
+// }
 
 function main() {
-  createMainPage();
+  createHomePage();
 }
 
 main();
