@@ -19,4 +19,6 @@ function createHoursList(infoCards, info) {
   return hoursCard;
 }
 
-export { createHoursList };
+function createMenuList(menuFood, menuDrinks, menuCakes) {}
+
+export { createHoursList, createMenuList };
