@@ -42,23 +42,27 @@ function createMenuPage() {
 }
 
 function createHomePage() {
-  console.log("home button click");
-  const mainContainer = document.createElement("div");
+  console.log("home button click", currentPage);
 
   let aboutText =
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit atque neque nulla aut quisquam soluta. Odit sunt dolore non beatae accusantium aliquam eos repellat, asperiores, reiciendis, esse quos numquam enim?";
 
   if (currentPage === undefined) {
+    var mainContainer = document.createElement("div");
     const logoName = document.createElement("div");
+    mainContainer.classList.add("main-container");
+    mainContainer.setAttribute("id", "main-container");
     logoName.classList.add("logo-name");
     logoName.innerHTML = "Pit Stop Cafe";
     mainContainer.append(logoName);
+    mainContainer.append(infoCards);
   } else if (currentPage != "home") {
     while (infoCards.firstChild) {
       infoCards.removeChild(infoCards.firstChild);
     }
   }
   currentPage = "home";
+
   // create the main divs for the content.
   // create each elements
   const content = document.getElementById("content"),
@@ -68,9 +72,10 @@ function createHomePage() {
     aboutCardP = document.createElement("p");
 
   // add the correct class to each div
-  mainContainer.classList.add("main-container");
-  mainContainer.setAttribute("id", "main-container");
+
   // logoName.classList.add("logo-name");
+  // mainContainer.classList.add("main-container");
+  // mainContainer.setAttribute("id", "main-container");
   infoCards.classList.add("info-cards");
   infoCards.setAttribute("id", "info-cards");
   aboutCard.classList.add("about", "card");
@@ -81,7 +86,7 @@ function createHomePage() {
 
   // append to the correct divs
   // mainContainer.append(logoName);
-  mainContainer.append(infoCards);
+  // mainContainer.append(infoCards);
   content.append(mainContainer);
   aboutCard.append(aboutCardP);
   infoCards.append(aboutCard);
