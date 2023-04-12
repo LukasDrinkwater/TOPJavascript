@@ -1,5 +1,5 @@
-import { info } from "./info.js";
-import { createHoursList } from "./functions.js";
+import { info, menuFood, menuDrinks, menuCakes } from "./info.js";
+import { checkPageDivs, createHoursList, createMenuList } from "./functions.js";
 
 let currentPage;
 const infoCards = document.createElement("div");
@@ -22,7 +22,33 @@ function createMenuPage() {
 
   // checks to see if the info-cars container has any child elements then removes
   // them if it does.
-  if (currentPage != "menu") {
+  checkPageDivs(currentPage);
+  // if (currentPage != "menu") {
+  //   const infoCards = document.getElementById("info-cards");
+  //   console.log(infoCards.firstChild);
+
+  //   while (infoCards.firstChild) {
+  //     infoCards.removeChild(infoCards.firstChild);
+  //   }
+  // }
+
+  createMenuList(infoCards, menuFood, menuDrinks, menuCakes);
+  currentPage = "menu";
+  // added them to the the createMenuList function in functions
+  // // create the card divs for the menu
+  // const foodCard = document.createElement("div"),
+  //   drinksCard = document.createElement("div"),
+  //   cakeCard = document.createElement("div");
+
+  // // add the correct class to each div
+  // foodCard.classList.add("info-card");
+  // drinksCard.classList.add("info-card");
+  // cakeCard.classList.add("info-card");
+}
+
+function createHomePage() {
+  if (currentPage === undefined) {
+  } else if (currentPage != "home") {
     const infoCards = document.getElementById("info-cards");
     console.log(infoCards.firstChild);
 
@@ -30,18 +56,7 @@ function createMenuPage() {
       infoCards.removeChild(infoCards.firstChild);
     }
   }
-  // create the card divs for the menu
-  const foodCard = document.createElement("div"),
-    drinksCard = document.createElement("div"),
-    cakeCard = document.createElement("div");
 
-  // add the correct class to each div
-  foodCard.classList.add("info-card");
-  drinksCard.classList.add("info-card");
-  cakeCard.classList.add("info-card");
-}
-
-function createHomePage() {
   console.log("home button click", currentPage);
 
   let aboutText =
@@ -50,10 +65,14 @@ function createHomePage() {
   if (currentPage === undefined) {
     var mainContainer = document.createElement("div");
     const logoName = document.createElement("div");
+    const content = document.getElementById("content");
+
     mainContainer.classList.add("main-container");
     mainContainer.setAttribute("id", "main-container");
     logoName.classList.add("logo-name");
     logoName.innerHTML = "Pit Stop Cafe";
+
+    content.append(mainContainer);
     mainContainer.append(logoName);
     mainContainer.append(infoCards);
   } else if (currentPage != "home") {
@@ -65,11 +84,11 @@ function createHomePage() {
 
   // create the main divs for the content.
   // create each elements
-  const content = document.getElementById("content"),
-    // mainContainer = document.createElement("div"),
-    // logoName = document.createElement("div"),
-    aboutCard = document.createElement("div"),
-    aboutCardP = document.createElement("p");
+  // const content = document.getElementById("content");
+  // mainContainer = document.createElement("div"),
+  // logoName = document.createElement("div"),
+  const aboutCard = document.createElement("div");
+  const aboutCardP = document.createElement("p");
 
   // add the correct class to each div
 
@@ -87,7 +106,7 @@ function createHomePage() {
   // append to the correct divs
   // mainContainer.append(logoName);
   // mainContainer.append(infoCards);
-  content.append(mainContainer);
+  // content.append(mainContainer);
   aboutCard.append(aboutCardP);
   infoCards.append(aboutCard);
 

@@ -9,21 +9,21 @@ let info = [
 ];
 
 let menuFood = [
-  { item: "Toast", price: "£2" },
-  { item: "Bacon barm", price: "4" },
-  { item: "Full English breakfast", price: "£6.50" },
+  { price: "£2", item: "Toast" },
+  { price: "4", item: "Bacon barm" },
+  { price: "£6.50", item: "Full English breakfast" },
 ];
 
 let menuDrinks = [
-  { item: "Tea", price: "£1.50" },
+  { price: "£1.50", item: "Tea" },
   { item: "Coffee", price: "£2.00" },
-  { item: "Soft drinks", price: "£2.50" },
+  { price: "£2.50", item: "Soft drinks" },
 ];
 
 let menuCakes = [
-  { item: "Chocolate cake", price: "£3.00" },
-  { item: "Sponge Cake", price: "£2.60" },
-  { item: "Ice cream", price: "£2.50" },
+  { price: "£3.00", item: "Chocolate cake" },
+  { price: "£2.60", item: "Sponge Cake" },
+  { price: "£2.50", item: "Ice cream" },
 ];
 
-export { info };
+export { info, menuFood, menuDrinks, menuCakes };
