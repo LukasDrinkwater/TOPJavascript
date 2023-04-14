@@ -44,11 +44,11 @@ function createMenuList(infoCards, menuCakes, menuDrinks, menuFood) {
 
   // add the correct class to each div
   foodCard.classList.add("card");
-  foodCardH1.classList.add("info-card-h1");
+  foodCardH1.classList.add("card-h1");
   drinksCard.classList.add("card");
-  drinksCardH1.classList.add("info-card-h1");
+  drinksCardH1.classList.add("card-h1");
   cakeCard.classList.add("card");
-  cakeCardH1.classList.add("info-card-h1");
+  cakeCardH1.classList.add("card-h1");
 
   let ul = document.createElement("ul");
 
@@ -57,8 +57,10 @@ function createMenuList(infoCards, menuCakes, menuDrinks, menuFood) {
     let li = document.createElement("li");
 
     li.innerText = menuDrinks[i].price + " - " + menuDrinks[i].item;
-    foodCard.appendChild(foodCardH1);
-    foodCard.appendChild(li);
+    foodCardH1.innerText = "Drinks";
+    foodCard.append(foodCardH1);
+    ul.append(li);
+    foodCard.appendChild(ul);
     infoCards.append(foodCard);
   }
 }

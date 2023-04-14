@@ -71,7 +71,9 @@
 
 .card {
   display: flex;
+  flex-direction: column;
   margin-bottom: 20px;
+  padding-left: 0px;
 }
 
 .card p {
@@ -79,9 +81,19 @@
   padding-right: 20px;
 }
 
+.card ul {
+  /* padding-right: 100px; */
+}
+
 .card li {
   padding-bottom: 5px;
   list-style: none;
+}
+
+.card-h1 {
+  margin: 0px;
+  padding-left: 15px;
+  padding-top: 15px;
 }
 
 /* styling for logo name in main container */
