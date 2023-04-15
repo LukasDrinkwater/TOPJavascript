@@ -1,4 +1,4 @@
-import { info, menuFood, menuDrinks, menuCakes } from "./info.js";
+import { info, allMenus } from "./info.js";
 import { checkPageDivs, createHoursList, createMenuList } from "./functions.js";
 
 let currentPage;
@@ -23,27 +23,10 @@ function createMenuPage() {
   // checks to see if the info-cars container has any child elements then removes
   // them if it does.
   checkPageDivs(currentPage);
-  // if (currentPage != "menu") {
-  //   const infoCards = document.getElementById("info-cards");
-  //   console.log(infoCards.firstChild);
+  //
 
-  //   while (infoCards.firstChild) {
-  //     infoCards.removeChild(infoCards.firstChild);
-  //   }
-  // }
-
-  createMenuList(infoCards, menuFood, menuDrinks, menuCakes);
+  createMenuList(infoCards, allMenus);
   currentPage = "menu";
-  // added them to the the createMenuList function in functions
-  // // create the card divs for the menu
-  // const foodCard = document.createElement("div"),
-  //   drinksCard = document.createElement("div"),
-  //   cakeCard = document.createElement("div");
-
-  // // add the correct class to each div
-  // foodCard.classList.add("info-card");
-  // drinksCard.classList.add("info-card");
-  // cakeCard.classList.add("info-card");
 }
 
 function createHomePage() {
@@ -82,19 +65,11 @@ function createHomePage() {
   }
   currentPage = "home";
 
-  // create the main divs for the content.
-  // create each elements
-  // const content = document.getElementById("content");
-  // mainContainer = document.createElement("div"),
-  // logoName = document.createElement("div"),
   const aboutCard = document.createElement("div");
   const aboutCardP = document.createElement("p");
 
   // add the correct class to each div
 
-  // logoName.classList.add("logo-name");
-  // mainContainer.classList.add("main-container");
-  // mainContainer.setAttribute("id", "main-container");
   infoCards.classList.add("info-cards");
   infoCards.setAttribute("id", "info-cards");
   aboutCard.classList.add("about", "card");
@@ -103,10 +78,6 @@ function createHomePage() {
   // logoName.innerHTML = "Pit Stop Cafe";
   aboutCardP.innerHTML = aboutText;
 
-  // append to the correct divs
-  // mainContainer.append(logoName);
-  // mainContainer.append(infoCards);
-  // content.append(mainContainer);
   aboutCard.append(aboutCardP);
   infoCards.append(aboutCard);
 
