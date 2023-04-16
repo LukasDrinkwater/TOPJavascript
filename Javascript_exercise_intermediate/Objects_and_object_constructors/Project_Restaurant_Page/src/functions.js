@@ -1,14 +1,15 @@
-import { allMenus } from "./info.js";
+import { info, allMenus } from "./info.js";
 
-function createHomePage() {
+function createHomePage(currentPage, infoCards, info) {
   if (currentPage === undefined) {
   } else if (currentPage != "home") {
     const infoCards = document.getElementById("info-cards");
-    console.log(infoCards.firstChild);
 
     while (infoCards.firstChild) {
       infoCards.removeChild(infoCards.firstChild);
     }
+  } else if (currentPage === "home") {
+    return;
   }
 
   console.log("home button click", currentPage);
@@ -58,7 +59,6 @@ function createHomePage() {
 function checkPageDivs(currentPage) {
   if (currentPage != "menu") {
     const infoCards = document.getElementById("info-cards");
-    console.log(infoCards.firstChild);
 
     while (infoCards.firstChild) {
       infoCards.removeChild(infoCards.firstChild);
@@ -87,57 +87,120 @@ function createHoursList(infoCards, info) {
   return hoursCard;
 }
 
-function createMenuList(infoCards, allMenus) {
-  console.log("ints in createMenuList");
-  // create the card divs and elements for the menu
-  const foodCard = document.createElement("div"),
-    foodCardH1 = document.createElement("h1"),
-    drinksCard = document.createElement("div"),
-    drinksCardH1 = document.createElement("h1"),
-    cakeCard = document.createElement("div"),
-    cakeCardH1 = document.createElement("h1");
+function createMenuList(currentPage, allMenus) {
+  if (currentPage === undefined) {
+    return;
+  } else if (currentPage != "menu") {
+    const infoCards = document.getElementById("info-cards");
 
-  // add the correct class to each div
-  foodCard.classList.add("card");
-  foodCardH1.classList.add("card-h1");
-  drinksCard.classList.add("card");
-  drinksCardH1.classList.add("card-h1");
-  cakeCard.classList.add("card");
-  cakeCardH1.classList.add("card-h1");
-
-  // let ul = document.createElement("ul");
-
-  // loop through each menu array and add the info to a new card
-  for (let i = 0; i < allMenus.length; i++) {
-    let menu = allMenus[i];
-    let headingText;
-    let ul = document.createElement("ul");
-    let menuCard = document.createElement("div");
-    let menuCardh1 = document.createElement("h1");
-    menuCard.classList.add("card");
-    menuCardh1.classList.add("card-h1");
-
-    if (i === 0) {
-      headingText = "Breakfast";
-    } else if (i === 1) {
-      headingText = "Drinks";
-    } else if (i === 2) {
-      headingText = "Desserts";
+    while (infoCards.firstChild) {
+      infoCards.removeChild(infoCards.firstChild);
     }
+    // create the card divs and elements for the menu
+    const foodCard = document.createElement("div"),
+      foodCardH1 = document.createElement("h1"),
+      drinksCard = document.createElement("div"),
+      drinksCardH1 = document.createElement("h1"),
+      cakeCard = document.createElement("div"),
+      cakeCardH1 = document.createElement("h1");
 
-    for (let j = 0; j < 3; j++) {
-      let currentMenu = menu[j];
+    // add the correct class to each div
+    foodCard.classList.add("card");
+    foodCardH1.classList.add("card-h1");
+    drinksCard.classList.add("card");
+    drinksCardH1.classList.add("card-h1");
+    cakeCard.classList.add("card");
+    cakeCardH1.classList.add("card-h1");
 
-      let li = document.createElement("li");
+    // let ul = document.createElement("ul");
 
-      li.innerText = currentMenu.price + " - " + currentMenu.item;
-      menuCardh1.innerText = headingText;
-      menuCard.append(menuCardh1);
-      ul.append(li);
-      menuCard.appendChild(ul);
-      infoCards.append(menuCard);
+    // loop through each menu array and add the info to a new card
+    for (let i = 0; i < allMenus.length; i++) {
+      let menu = allMenus[i];
+      let headingText;
+      let ul = document.createElement("ul");
+      let menuCard = document.createElement("div");
+      let menuCardh1 = document.createElement("h1");
+      menuCard.classList.add("card");
+      menuCardh1.classList.add("card-h1");
+
+      if (i === 0) {
+        headingText = "Breakfast";
+      } else if (i === 1) {
+        headingText = "Drinks";
+      } else if (i === 2) {
+        headingText = "Desserts";
+      }
+
+      for (let j = 0; j < 3; j++) {
+        let currentMenu = menu[j];
+
+        let li = document.createElement("li");
+
+        li.innerText = currentMenu.price + " - " + currentMenu.item;
+        menuCardh1.innerText = headingText;
+        menuCard.append(menuCardh1);
+        ul.append(li);
+        menuCard.appendChild(ul);
+        infoCards.append(menuCard);
+      }
     }
+  } else if (currentPage === "menu") {
+    return;
   }
 }
 
-export { createHoursList, createMenuList, checkPageDivs };
+// // create the card divs and elements for the menu
+// const foodCard = document.createElement("div"),
+//   foodCardH1 = document.createElement("h1"),
+//   drinksCard = document.createElement("div"),
+//   drinksCardH1 = document.createElement("h1"),
+//   cakeCard = document.createElement("div"),
+//   cakeCardH1 = document.createElement("h1");
+
+// // add the correct class to each div
+// foodCard.classList.add("card");
+// foodCardH1.classList.add("card-h1");
+// drinksCard.classList.add("card");
+// drinksCardH1.classList.add("card-h1");
+// cakeCard.classList.add("card");
+// cakeCardH1.classList.add("card-h1");
+
+// // let ul = document.createElement("ul");
+
+// // loop through each menu array and add the info to a new card
+// for (let i = 0; i < allMenus.length; i++) {
+//   let menu = allMenus[i];
+//   let headingText;
+//   let ul = document.createElement("ul");
+//   let menuCard = document.createElement("div");
+//   let menuCardh1 = document.createElement("h1");
+//   menuCard.classList.add("card");
+//   menuCardh1.classList.add("card-h1");
+
+//   if (i === 0) {
+//     headingText = "Breakfast";
+//   } else if (i === 1) {
+//     headingText = "Drinks";
+//   } else if (i === 2) {
+//     headingText = "Desserts";
+//   }
+
+//   for (let j = 0; j < 3; j++) {
+//     let currentMenu = menu[j];
+
+//     let li = document.createElement("li");
+
+//     li.innerText = currentMenu.price + " - " + currentMenu.item;
+//     menuCardh1.innerText = headingText;
+//     menuCard.append(menuCardh1);
+//     ul.append(li);
+//     menuCard.appendChild(ul);
+//     infoCards.append(menuCard);
+//     }
+//   }
+// }
+
+function createContactPage() {}
+
+export { createHoursList, createMenuList, checkPageDivs, createHomePage };
