@@ -39,6 +39,10 @@
   font-size: 2rem;
 }
 
+.menu-button-clicked {
+  background-color: #e10600;
+}
+
 .menu {
   margin-left: 20px;
   margin-right: 20px;
@@ -79,10 +83,6 @@
 .card p {
   padding-left: 20px;
   padding-right: 20px;
-}
-
-.card ul {
-  /* padding-right: 100px; */
 }
 
 .card li {

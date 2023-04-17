@@ -26,4 +26,10 @@ let allMenus = [
   ],
 ];
 
-export { info, allMenus };
+let contactInfo = [
+  { contactType: "Phone", detail: "07511 231485" },
+  { contactType: "Email", detail: "pitstockcafe@cafe.com" },
+  { contactType: "Twitter", detail: "@pitstopcafe" },
+];
+
+export { info, allMenus, contactInfo };
