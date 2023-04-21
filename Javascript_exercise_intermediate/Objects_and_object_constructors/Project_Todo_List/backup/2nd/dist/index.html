@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello world</title>
+    <script src="../build/index.bundle.js" defer></script>
+    <link rel="stylesheet" href="../src/style.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="form-container">
+        <div class="project-submit-form-container">
+          <!-- need to look at local storage in the TOP page for -->
+          <form id="project-submit-form" action="" method="?">
+            <ul id="project-form-ul">
+              <li>
+                <label for="projectName">Project Name</label>
+                <input type="text" name="projectName" id="projectName" />
+              </li>
+              <li>
+                <button class="submit-project">Submit Project</button>
+              </li>
+            </ul>
+          </form>
+        </div>
+        <div class="list-submit-form-container">
+          <!-- need to look at local storage in the TOP page for -->
+          <form id="list-submit-form" action="" method="?">
+            <ul id="list-form-ul">
+              <li>
+                <label for="taskName">Task</label>
+                <input type="text" name="taskName" id="task-name" />
+              </li>
+              <li>
+                <label for="whatToDo">What you need to do?</label>
+                <input type="text" name="whatToDo" id="what-to-do" />
+              </li>
+            </ul>
+          </form>
+        </div>
+      </div>
+      <div class="project-task-container" id="project-task-container">
+        <div class="project-card">
+          <h1>Todays tasks</h1>
+          <div class="task-card">
+            <p>I want to do this</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    hello world!
+    <!-- default project todo list that loads by default.
+
+ have a small form where you can create a new project todo list OR add a new
+task to a specific project.-->
+  </body>
+</html>
