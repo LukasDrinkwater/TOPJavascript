@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objects and object constructors</title>
+    <script src="javascript.js" defer></script>
+    <link rel="stylesheet" href="stlyes.css" />
+  </head>
+  <body>
+    <div class="mainContainer">
+      <div class="submitBookFormContainer">
+        <form id="bookForm" action="" method="post">
+          <ul>
+            <li>
+              <label for="title">Title</label>
+              <input
+                type="text"
+                name="title"
+                id="title"
+                placeholder="book title"
+              />
+            </li>
+            <li>
+              <label for="author">Author</label>
+              <input
+                type="text"
+                name="author"
+                id="title"
+                placeholder="book author"
+              />
+            </li>
+            <li>
+              <label for="pages">Pages</label>
+              <input
+                type="text"
+                name="pages"
+                id="pages"
+                placeholder="book pages"
+              />
+            </li>
+            <li>
+              <label for="isRead">Has the book been read?</label>
+              <select name="isRead" id="isRead">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </li>
+            <li>
+              <label for="submit"></label>
+              <input type="submit" name="submit" id="submitButton" />
+            </li>
+          </ul>
+        </form>
+      </div>
+      <div class="cardContainer" id="cardContainer">
+        <div class="card">
+          <ul class="cardList">
+            <li class="title">Star Wars</li>
+            <li class="author">George Lucas</li>
+            <li class="pages">200</li>
+            <li class="isRead">Yes</li>
+          </ul>
+          <button class="deleteButton">Delete Book</button>
+          <button class="changeStatus">Change Status</button>
+        </div>
+        <div class="card">
+          <ul class="cardList">
+            <li class="title">GoT</li>
+            <li class="author">George RR Martin</li>
+            <li class="pages">400</li>
+            <li class="isRead">No</li>
+          </ul>
+          <button class="deleteButton">Delete Book</button>
+          <button class="changeStatus">Change Status</button>
+        </div>
+        <div class="card">
+          <ul class="cardList">
+            <li class="title"></li>
+            <li class="author"></li>
+            <li class="pages"></li>
+            <li class="isRead"></li>
+          </ul>
+          <button class="deleteButton">Delete Book</button>
+          <button class="changeStatus">Change Status</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
